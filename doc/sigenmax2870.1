@@ -1,0 +1,26 @@
+.TH SIGENMAX2870 1 "FEB 2023" Linux/Macos "User Manuals"                                  
+.SH NAME                                                                     
+sigenmax2870 \-  a tool to configure  LTDZ MAX2870 signal generator compatible boards by pc, using serial port.
+.SH SYNOPSIS                                                                 
+.B  sigenmax2870 [-d device_path] [-f frequency_kHz] [-a amplification] [-p] 
+         [-h] 
+.SH DESCRIPTION                                                              
+.B sigenmax2870                                                                       
+ is a tool able to configure LTDZ MAX2870 signal generator compatible boards using serial port. It can cofigure frequency and amplification factor. 
+.SH OPTIONS                                                       
+.IP -d device
+this mandatory parameter specifies the full path of the serial port associated to the signal generator board ( /dev/<device_name> ).
+.IP -f frequency
+this mandatory parameter specifies the frequency will be configured in kHz.
+.IP -a amplification
+This optional parameter specifies the amplification factor (default : 1). Legl values are 1,2,3,4 (corresponding to -4dB, -1dB, +2dB or +5dB ).
+.IP -p                                                                       
+For debugging purpose, this option enable command packets printing.
+.IP -d                                                                       
+Debug mode. Prints on stdout all the packets sent and received and their payload. Warning: activating the debug mode even the sensitive information (private keys, etc) will be printed. Be careful.
+.IP -h
+A short description of sigenmax2870 command line syntax.
+.SH BUGS                                                                     
+This program is a beta version, please report any bug to its author.
+.SH AUTHOR                                                                   
+Gabriele Bonacini <gabriele.bonacini@protonmail.com>

@@ -1,0 +1,8 @@
+sigenmax2870 is a user space program can be used to program LTDZ MAX2870 signal generator compatible boards.
+
+- Tested on:
+
+  - Macos Ventura 13.1         (m1 ARM)
+  - Macos Monterey 12.6.2      (x86_64)
+  - Debian 12 ( Bookworm )     (aarch64)
+  - Ubuntu 22.04.2 LTS (Jammy) (x86_64)
