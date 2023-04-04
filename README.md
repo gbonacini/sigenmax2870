@@ -28,27 +28,27 @@ To compile the suite, the following tools are required:
 - Automake
 
 As example, the following commands will install the required dependencies on Debian / Ubuntu unvironments:
-
+```
 apt-get install build-essentials
 apt-get install automake
 apt-get install libtool
-
+```
 Ubuntu Troubleshooting:
 =======================
 
 The product Id of these boards is assigned to a model of braille board, so it isn't recognized correctly:
-
+```
 # lsusb
 
 ... <omissis> ...
 Bus 002 Device 006: ID 1a86:7523 QinHeng Electronics CH340 serial converter
 ... <omissis> ...
-
+```
 
 As workaround, open the followuing file:
-
+```
 # vi /usr/lib/udev/rules.d/85-brltty.rules
-
+```
 then comment the line related to the Device: 1A86:7523 
 
 Installation:
@@ -86,13 +86,16 @@ Command Line Examples:
 =====================
 
 - Set the device to generate a 40.666MHz signal:<BR>
+```
    ./sigenmax2870 -d /dev/tty.usbserial-110 -f 40666 
+```
 
 - Same as the previoius example but this one also show the command sent to the device:<BR>
-  <./sigenmax2870 -d /dev/tty.usbserial-110 -f 40666 -p <BR>
+```
+  ./sigenmax2870 -d /dev/tty.usbserial-110 -f 40666 -p <BR>
   Response Length: 43<BR>
   216.58.205.195<BR>
-
+```
 Further documentation:
 ======================
 
