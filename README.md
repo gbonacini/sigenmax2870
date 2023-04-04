@@ -54,7 +54,9 @@ then comment the line related to the Device: 1A86:7523
 Installation:
 =============
 
-- launch the configure script:
+- Create configuration script:
+  make -f makefile.dist 
+- Launch the just generated configure script:
   ./configure
 - Compile the program:
   make
