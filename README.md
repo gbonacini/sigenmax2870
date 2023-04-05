@@ -29,6 +29,7 @@ To compile the suite, the following tools are required:
 
 As example, the following commands will install the required dependencies on Debian / Ubuntu unvironments:
 ```
+apt-get update
 apt-get install build-essentials
 apt-get install automake
 apt-get install libtool
@@ -55,13 +56,21 @@ Installation:
 =============
 
 - Create configuration script:
+```
   make -f makefile.dist 
+```
 - Launch the just generated configure script:
+```
   ./configure
+```
 - Compile the program:
+```
   make
+```
 - Install the program and the man page:
+```
   sudo make install
+```
 
 Quick Start:
 ============
