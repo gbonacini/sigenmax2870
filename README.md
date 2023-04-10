@@ -123,7 +123,7 @@ The installer are present in ./gui directory, in the specific directory related 
 The following video show the GUI in action ( the appearance could change in new releases ):
 
 
-![alt text](images/app_run.mov "GUI in action")
+![alt text](images/app_run.mp4 "GUI in action")
 
 
 GUI Client dependencies:
