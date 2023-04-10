@@ -122,8 +122,9 @@ The installer are present in ./gui directory, in the specific directory related 
 
 The following video show the GUI in action ( the appearance could change in new releases ):
 
-
-![alt text](images/app_run.mp4 "GUI in action")
+<video width="320" height="240" controls>
+  <source src="images/app_run.mp4" type="video/mp4">
+</video>
 
 
 GUI Client dependencies:
