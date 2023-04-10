@@ -110,6 +110,35 @@ Further documentation:
 
 See the man page included in this release.
 
+GUI ( Experimental ):
+=====================
+
+This software distribution also provide an experimentl GUI based client, writen using QT framework. It has to be considered experimental. 
+A complete / full version will be published asap. You can find installers of alpha versions in 'gui' directory of this software distribution:
+* setup is the Ubuntu version installer;
+* setup.app is the macOs version installer (coming soon).
+
+The installer are present in ./gui directory, in the specific directory related to the destination OS.
+
+The following video show the GUI in action ( the appearance could change in new releases ):
+
+
+![alt text](images/app_run.mov "GUI in action")
+
+
+GUI Client dependencies:
+========================
+
+QT GUI client is tested using:
+
+* 22.04.2 LTS ( jammy )
+* MacOs 13.3 ( Ventura ) (coming soon )
+
+* The following is the list of QT system dependencies necessary for a correct installation of this software:
+
+ sudo apt-get install libxcb-xinerama0 
+ sudo apt-get install qt6-base-dev qt6-webengine-dev qt6-webengine-dev-tools qt6-webengine-private-dev  qml-module-*  libqt6we*
+
 License:
 ========
 
