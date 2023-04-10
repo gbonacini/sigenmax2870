@@ -122,7 +122,7 @@ The installer are present in ./gui directory, in the specific directory related 
 
 The following video show the GUI in action ( the appearance could change in new releases ):
 
-![alt text](https://youtu.be/Y-UzmgS3uBw "demo gui video")
+[![Watch the video](images/thumbnail2870.png)](https://youtu.be/Y-UzmgS3uBw)
 
 
 GUI Client dependencies:
