@@ -16,7 +16,7 @@ Prerequisites:
 The programs is compatible with MacOS and Linux ( both x86 and Arm distributions) and it's tested using the following OSs:
 
 - Macos Ventura 13.1         (m1 ARM)    compiled with Apple clang version 14.0.0 (clang-1400.0.29.202)
-- Macos Monterey 12.6.2      (x86_64)       compiled with Apple clang vesrion  14.0.0 (clang-1400.0.29.202)
+- Macos Monterey 12.6.2      (x86_64)    compiled with Apple clang vesrion  14.0.0 (clang-1400.0.29.202)
 
 - Debian 12 ( Bookworm )     (aarch64)   compiled with gcc 12.2.0
 - Ubuntu22LTS                (x86_64)    compiled with gcc 11.3.0 ( See Ubuntu Troubleshooting ! )
@@ -116,7 +116,7 @@ GUI ( Experimental ):
 This software distribution also provide an experimentl GUI based client, writen using QT framework. It has to be considered experimental. 
 A complete / full version will be published asap. You can find installers of alpha versions in 'gui' directory of this software distribution:
 * setup is the Ubuntu version installer;
-* setup.app is the macOs version installer (coming soon).
+* SignalGenerator.dmg is the macOs version installer (ARM, x86-64 coming soon).
 
 The installer are present in ./gui directory, in the specific directory related to the destination OS.
 
@@ -131,7 +131,7 @@ GUI Client dependencies:
 QT GUI client is tested using:
 
 * 22.04.2 LTS ( jammy )
-* MacOs 13.3 ( Ventura ) (coming soon )
+* MacOs 13.3 ( Ventura ) (ARM, x86 coming soon )
 
 * The following is the list of QT system dependencies necessary for a correct installation of this software:
 
