@@ -24,3 +24,6 @@ compile
 configure~
 .libs
 signal_generator.code-workspace
+SignalGenerator.dmg
+SignalGenerator.orig.dmg
+split.sh
