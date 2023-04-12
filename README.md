@@ -133,10 +133,23 @@ QT GUI client is tested using:
 * 22.04.2 LTS ( jammy )
 * MacOs 13.3 ( Ventura ) (ARM, x86 coming soon )
 
-* The following is the list of QT system dependencies necessary for a correct installation of this software:
+* The following is the list of QT system dependencies necessary for a correct installation of this software on Ubuntu:
 
  sudo apt-get install libxcb-xinerama0 
  sudo apt-get install qt6-base-dev qt6-webengine-dev qt6-webengine-dev-tools qt6-webengine-private-dev  qml-module-*  libqt6we*
+
+GUI Client Installation:
+========================
+
+* On MacOs: 
+- Install dependencies described in previous paragraph;
+- build the dmg:
+  ./prepare.sh
+- double click on generated DMG file;
+- drag and drop the program shown in destination folder (i.e. "Applications" directory).
+
+* On Linux:
+- start the installer ("setup" file) and follow the shown instructions.
 
 License:
 ========
