@@ -21,6 +21,8 @@
 #include <string>
 #include <map>
 
+#include <anyexcept.hpp>
+
 namespace parcmdline {
 
     struct ParseResult{
@@ -34,15 +36,18 @@ namespace parcmdline {
 
     class ParseCmdLine{
         public:
-            ParseCmdLine(int argc, char **argv, const char* flags, bool uniq=true);
+            ParseCmdLine(int argc, 
+                         char **argv, 
+                         const char* flags, 
+                         bool uniq=true)                                              noexcept;
                     bool             isSet(char flag)                           const noexcept;
                     bool             isLegal(char flag)                         const noexcept;
                     bool             hasValue(char flag)                        const noexcept;
                     bool             hasUnflaggedPars(void)                     const noexcept;
             const   std::string&     getUnflaggedPars(void)                     const noexcept;
             const   std::string&     getValue(char flag)                        const noexcept;
-            const   std::string      getValueUpper(char flag)                   const noexcept;
-            const   std::string      getValueLower(char flag)                   const noexcept;
+            const   std::string      getValueUpper(char flag)                   const anyexcept;
+            const   std::string      getValueLower(char flag)                   const anyexcept;
                     bool             getErrorState(void)                        const noexcept;
             const   std::string&     getErrorMsg(void)                          const noexcept;
 
@@ -62,5 +67,14 @@ namespace parcmdline {
                     bool             setOn(char flag)                                 noexcept;
     };
 
-} // End Namespace
+     class ParseCmdLineException final : public std::exception {
+        public:
+           ParseCmdLineException(std::string& errString);
+           ParseCmdLineException(std::string&& errString);
+           const char* what(void)                                                const noexcept override;
+           
+        private:
+           std::string errorMessage;
+    };
 
+} // End Namespace

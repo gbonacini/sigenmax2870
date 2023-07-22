@@ -31,9 +31,9 @@ using std::tolower;
 
 namespace parcmdline{
 
-    ParseCmdLine::ParseCmdLine(int argc, char **argv, const char* flags, bool uniq) 
-         : errState{false}, unflaggedParams{false}, uniqueParams{uniq},
-           argcRef{argc},   errString{""}, unflaggedArgs{"noparams"},
+    ParseCmdLine::ParseCmdLine(int argc, char **argv, const char* flags, bool uniq)  noexcept
+         : errState{false},  unflaggedParams{false},  uniqueParams{uniq},
+           argcRef{argc},    errString{""},           unflaggedArgs{"noparams"},
            errorMesg{""}
     {
         tokenizeFlags(flags);
@@ -80,38 +80,36 @@ namespace parcmdline{
         return errString;
     }
 
-    const string  ParseCmdLine::getValueUpper(char flag)    const noexcept{
-        string  buff;
+    const string  ParseCmdLine::getValueUpper(char flag)    const anyexcept{
+        string  buff {""};
         try{
             if(flagsStatus.find(flag) != flagsStatus.end())
                 if(flagsStatus.at(flag).hasValue){
                    for(auto ch : flagsStatus.at(flag).value)
                       buff.push_back(static_cast<char>(toupper(ch)));
-
-                   return buff;
             }
         }catch(...){
             errorMesg.append("\nError getting the upper case value of: ").push_back(flag);
+            throw ParseCmdLineException(errorMesg);
         }
 
-        return errString;
+        return buff;
     }
 
-    const string  ParseCmdLine::getValueLower(char flag)    const noexcept{
-        string  buff;
+    const string  ParseCmdLine::getValueLower(char flag)    const anyexcept{
+        string  buff {""};
         try{
             if(flagsStatus.find(flag) != flagsStatus.end())
                 if(flagsStatus.at(flag).hasValue){
                    for(auto ch : flagsStatus.at(flag).value)
                       buff.push_back( static_cast<char>(tolower(ch)));
 
-                   return buff;
             }
         }catch(...){
             errorMesg.append("Error getting the lower case value of: ").push_back(flag);
+            throw ParseCmdLineException(errorMesg);
         }
-
-        return errString;
+        return buff;
     }
 
     bool ParseCmdLine::setOn(char flag) noexcept{
@@ -121,7 +119,7 @@ namespace parcmdline{
         if(flagsStatus[flag].isPresent)
             return false;
 
-        flagsStatus[flag].isPresent         = true;
+        flagsStatus[flag].isPresent  = true;
         return true;
     }
 
@@ -139,8 +137,8 @@ namespace parcmdline{
     }
 
     bool ParseCmdLine::parseArgs(char **argv, const char* flags) noexcept{
-        for(int ch = getopt (argcRef, argv, flags); static_cast<unsigned char>(ch) != 255; ch = getopt (argcRef, argv, flags)){
-            char c = static_cast<char>(ch);
+        for(int ch { getopt (argcRef, argv, flags)}; static_cast<unsigned char>(ch) != 255; ch = getopt (argcRef, argv, flags)){
+            char c { static_cast<char>(ch) };
             if(c != '?' && c > 0){
                 if(flagsStatus.find(c) == flagsStatus.end()){
                     errorMesg.append("\nError unexpected parameter: ").push_back(c);
@@ -202,5 +200,17 @@ namespace parcmdline{
 
         return true;
     }
+
+   ParseCmdLineException::ParseCmdLineException(string& errString)
+        : errorMessage{errString}
+   {}
+
+    ParseCmdLineException::ParseCmdLineException(string&& errString)
+        : errorMessage{errString}
+   {}
+ 
+   const char* ParseCmdLineException::what(void)   const noexcept {
+       return errorMessage.c_str();
+   }
 
 } // End Namespace 
