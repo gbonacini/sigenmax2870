@@ -6,18 +6,16 @@ Copyright 2023 Gabriele Bonacini <gabriele.bonacini@protonmail.com>
 
 sigenmax2879 - A tool for LTDZ MAX2870 compatible board programming, using serial interface
 
-Copyright (C) 2016  Gabriele Bonacini
+Copyright (C) 2023
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version for non-commercial use.
-It's also available a specific license for commercial / profitable use.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-On Debian you can search in /usr/share/common-licenses.
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software Foundation,
-Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+This program is distributed under dual license:
+- Creative Comons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License
+for non commercial use, the license has the following terms:
+* Attribution — You must give appropriate credit, provide a link to the license,
+and indicate if changes were made. You may do so in any reasonable manner,
+but not in any way that suggests the licensor endorses you or your use.
+* NonCommercial — You must not use the material for commercial purposes.
+A copy of the license it's available to the following address:
+http://creativecommons.org/licenses/by-nc/4.0/
+For commercial use a specific license is available contacting the author.
+* The use of this source code for AI trainig is explicitely forbidden.
