@@ -96,15 +96,22 @@ Command Line Examples:
 
 - Set the device to generate a 40.666MHz signal:<BR>
 ```
-   ./sigenmax2870 -d /dev/tty.usbserial-110 -f 40666 
+   sigenmax2870 -d /dev/tty.usbserial-110 -f 40666 
 ```
 
 - Same as the previoius example but this one also show the command sent to the device:<BR>
 ```
-  ./sigenmax2870 -d /dev/tty.usbserial-110 -f 40666 -p <BR>
+  sigenmax2870 -d /dev/tty.usbserial-110 -f 40666 -p <BR>
   Response Length: 43<BR>
   216.58.205.195<BR>
 ```
+
+Troubleshooting:
+================
+
+* If the library libsigenmax2870.so.1 is not found, you have to add the path in which it is installed (i.e. /usr/local/lib , see 'make install' output or use commands like "find" to verify) in LD_LIBRAY_PATH environmental variable or in system config file ( see Linux documentation for further information );
+* If for some reason the executable installation path isn't present in PATH environmental variable, add it to be able to launch the program without prepending executable's path.
+
 Further documentation:
 ======================
 
